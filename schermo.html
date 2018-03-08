@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html  lang = "en" >
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Luca Ballarati">
+		<title>board</title>
+        <script type = "text/javascript" src = "javascript/config.js"></script>
+        <script type = "text/javascript" src = "javascript/display.js"></script>
+        <script type = "text/javascript" src = "javascript/enemies.js"></script>
+        <script type = "text/javascript" src = "javascript/gamerules.js"></script>
+        <script type = "text/javascript" src = "javascript/player.js"></script>
+        <script type = "text/javascript" src = "javascript/room.js"></script>
+        <script type = "text/javascript" src = "javascript/settings.js"></script>   
+	</head>
+	<body onload = Transition()>
+        <div Id = "board" style = "float: left">
+        </div>
+        <div style = "float: right">
+            <h3>Attack list (in order of prioritiy):</h3>
+            <p>Swipe: activates if there are 3 or more enemies in the tiles next to you. Deals 1 damage to all adjacient enemies</p>
+            <p>Sword Jump: activates if there is an enemy in the direction you moved, followed by an empty space and then another enemy. Does not stack.</p>
+            <p>            Deals one damage to both enemies and moves you by two spaces in the direction you moved</p>
+            <p>Thrust: activates if there is an enemy in the direction you moved. Deals one damage to that enemy</p>
+            <h3>List of enemies:</h3>
+            <p>Goblin: can move in all eight directions. Chases the player and attacks if it is adjacent to the player</p>
+        </div>
+        <script tyoe = "text/javascript">document.addEventListener('keydown',IssueCommand);</script>
+	</body>

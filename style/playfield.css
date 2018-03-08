@@ -1,0 +1,18 @@
+#field {
+	width: 80%;
+	height: 80%;
+	background-color: black;
+}
+
+#tile {
+	width: 40px;
+	height: 40px;
+}
+
+#wall {
+	background-color: darkgray;
+}
+
+#floor  {
+	background-color: gray;
+}
