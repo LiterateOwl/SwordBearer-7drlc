@@ -1,3 +1,5 @@
+//var enemysprites = [GOBLIN_CHAR,KNIGHT_CHAR];
+
 var display = new Array(MAX_WIDTH);
 for (var X = 0; X < MAX_WIDTH; X++) {
     display[X] = new Array(MAX_HEIGHT);
@@ -17,9 +19,9 @@ function Paint() {
 
 function CheckForEnemy(cx,cy) {
     for (var e = 0; e < enemies.length; e++) {
-        if (enemies[e].IsThere(cx,cy)) {return true;}
+        if (enemies[e].IsThere(cx,cy)) {return enemies[e].sprite;}
     }
-    return false;
+    return null;
 }
 
 function Refresh() {
@@ -29,9 +31,12 @@ function Refresh() {
                     display[x][y] = player.health_points;
                     continue;
                 }
-                if (CheckForEnemy(x,y)) {
-                    display[x][y] = GOBLIN_CHAR;
-                    continue;
+                else{
+                    var enemychar = CheckForEnemy(x,y);
+                    if (enemychar != null) {
+                        display[x][y] = enemychar;
+                        continue;
+                    }
                 }
                 switch (room[x][y].type) {
                     case 0: display[x][y] = FLOOR_CHAR; break;

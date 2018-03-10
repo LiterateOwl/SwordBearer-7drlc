@@ -7,7 +7,7 @@ function Dir(n) {
 
 function EnemyTurn() {
     for (var i = 0; i < enemies.length; i++) {
-        if (enemies[i].alive) {enemies[i].Pursue();}
+        if (enemies[i].alive) {enemies[i].Behaviour();}
     }
 }
 
@@ -28,7 +28,15 @@ function Transition() {
     GenRoom();
     player.Spawn();
     for (var i = 0; i < enemies.length; i++) {
-        enemies[i] = new goblin();
+        var kind = Math.floor(Math.random()*enemykinds.length);
+        enemies[i] = new enemy(enemykinds[kind]);
+        for (var e = 0; e < enemies.lenght; e++) {
+            if (e == i) {continue;}
+            if (enemies[e].posx == enemies[i].posx && enemies[e].posy == enemies[i].posy) {
+                enemies[i] = new enemy(enemies[i].name);
+                e = 0;
+            }
+        }
     }
     Refresh();
 }

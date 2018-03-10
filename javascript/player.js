@@ -10,7 +10,7 @@ var player = {
         var count = 0;
         for (var atkx = -1; atkx < 2; atkx++) {
             for (var atky = -1; atky < 2; atky++) {
-                if (display[this.posx+atkx][this.posy+atky] == GOBLIN_CHAR) {count++;}
+                if (CheckForEnemy(this.posx+atkx,this.posy+atky) != null) {count++;}
             }
         }
         if (count >= 3) {
@@ -77,7 +77,7 @@ var player = {
         var diry = Dir(movy);
         while (this.posx != destx || this.posy != desty) {
             if (room[this.posx+dirx][this.posy+diry].type == 1) {break;}
-            if (display[this.posx+dirx][this.posy+diry] == GOBLIN_CHAR) {break;}
+            if (CheckForEnemy(this.posx+dirx,this.posy+diry) != null) {break;}
             this.posx += dirx;
             this.posy += diry;
             Refresh ();

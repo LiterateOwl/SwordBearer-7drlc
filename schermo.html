@@ -16,13 +16,14 @@
         <div Id = "board" style = "float: left">
         </div>
         <div style = "float: right">
-            <h3>Attack list (in order of prioritiy):</h3>
+            <p><strong>Attack list (in order of prioritiy):</strong></p>
             <p>Swipe: activates if there are 3 or more enemies in the tiles next to you. Deals 1 damage to all adjacient enemies</p>
             <p>Sword Jump: activates if there is an enemy in the direction you moved, followed by an empty space and then another enemy. Does not stack.</p>
             <p>            Deals one damage to both enemies and moves you by two spaces in the direction you moved</p>
             <p>Thrust: activates if there is an enemy in the direction you moved. Deals one damage to that enemy</p>
-            <h3>List of enemies:</h3>
-            <p>Goblin: can move in all eight directions. Chases the player and attacks if it is adjacent to the player</p>
+            <p><strong>List of enemies:</strong></p>
+            <p>Chases the player and attacks if it is adjacent to the player</p>
+            <p>Chases the player until it is within three tiles and is either on the same x or y axis as the player, or on the same diagonal;<br>then charges along up to three tiles and damages the player if it is in the way</p>
         </div>
         <script tyoe = "text/javascript">document.addEventListener('keydown',IssueCommand);</script>
 	</body>

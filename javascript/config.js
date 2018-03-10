@@ -4,12 +4,18 @@ const MAX_HEIGHT = 20;
 const FLOOR = 0;
 const WALL = 1;
 const WALL_CHANCE_PERCENTILE = 5;
-const ENEMIES_NUMBER = 4;
+const ENEMIES_NUMBER = 5;
 
 //enemies
+//goblin
 const GOBLIN_HEALTH = 1;
 const GOBLIN_DAMAGE = 1;
 const GOBLIN_SPEED = 1;
+//knight
+const KNIGHT_HEALTH = 1;
+const KNIGHT_DAMAGE = 1;
+const KNIGHT_SPEED = 2;
+const KNIGHT_CHARGE_RANGE = 3;
 
 //player
 const PLAYER_HEALTH = 3;
@@ -23,4 +29,5 @@ const FLOOR_CHAR = "_";
 const WALL_CHAR = "#";
 const PLAYER_CHAR = "P";
 const GOBLIN_CHAR = "g";
+const KNIGHT_CHAR = "k";
 const DAMAGE_CHAR = "X"
